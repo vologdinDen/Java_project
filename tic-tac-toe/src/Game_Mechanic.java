@@ -32,33 +32,40 @@ public class Game_Mechanic {
         this.field = field;
     }
 
-    public boolean is_win(){
+    public int is_win() {
 
-        if(this.field[0][0].equals(this.field[0][1]) && this.field[0][0].equals(this.field[0][2]) && !this.field[0][0].equals("_")){
-            return false;
+        if (this.field[0][0].equals(this.field[0][1]) && this.field[0][0].equals(this.field[0][2]) && !this.field[0][0].equals("_")) {
+            return 1;
         }
-        if(this.field[1][0].equals(this.field[1][1]) && this.field[1][0].equals(this.field[1][2]) && !this.field[1][0].equals("_")){
-            return false;
+        if (this.field[1][0].equals(this.field[1][1]) && this.field[1][0].equals(this.field[1][2]) && !this.field[1][0].equals("_")) {
+            return 1;
         }
-        if(this.field[2][0].equals(this.field[2][1]) && this.field[2][0].equals(this.field[2][2]) && !this.field[2][0].equals("_")){
-            return false;
+        if (this.field[2][0].equals(this.field[2][1]) && this.field[2][0].equals(this.field[2][2]) && !this.field[2][0].equals("_")) {
+            return 1;
         }
-        if(this.field[0][0].equals(this.field[1][0]) && this.field[0][0].equals(this.field[2][0]) && !this.field[0][0].equals("_")){
-            return false;
+        if (this.field[0][0].equals(this.field[1][0]) && this.field[0][0].equals(this.field[2][0]) && !this.field[0][0].equals("_")) {
+            return 1;
         }
-        if(this.field[0][1].equals(this.field[1][1]) && this.field[0][1].equals(this.field[2][1]) && !this.field[0][1].equals("_")){
-            return false;
+        if (this.field[0][1].equals(this.field[1][1]) && this.field[0][1].equals(this.field[2][1]) && !this.field[0][1].equals("_")) {
+            return 1;
         }
-        if(this.field[0][2].equals(this.field[1][2]) && this.field[0][2].equals(this.field[2][2]) && !this.field[0][2].equals("_")){
-            return false;
+        if (this.field[0][2].equals(this.field[1][2]) && this.field[0][2].equals(this.field[2][2]) && !this.field[0][2].equals("_")) {
+            return 1;
         }
-        if(this.field[0][0].equals(this.field[1][1]) && this.field[0][0].equals(this.field[2][2]) && !this.field[0][0].equals("_")){
-            return false;
+        if (this.field[0][0].equals(this.field[1][1]) && this.field[0][0].equals(this.field[2][2]) && !this.field[0][0].equals("_")) {
+            return 1;
         }
-        if(this.field[0][2].equals(this.field[1][1]) && this.field[0][2].equals(this.field[2][0]) && !this.field[0][2].equals("_")){
-            return false;
+        if (this.field[0][2].equals(this.field[1][1]) && this.field[0][2].equals(this.field[2][0]) && !this.field[0][2].equals("_")) {
+            return 1;
         }
-        return true;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (this.field[i][j].equals("_")) {
+                    return 2;
+                }
+            }
+        }
+        return 0;
     }
 
 

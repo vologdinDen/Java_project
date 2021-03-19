@@ -43,7 +43,7 @@ public class Player_Computer_Medium extends Players{
     private boolean check(String choose,int i, int j, Game_Mechanic game_Object){
         this.field_1[i][j] = choose;
         game_Object.set_field(this.field_1);
-        if(!game_Object.is_win()){
+        if(game_Object.is_win() == 1){
             return true;
         }
         this.field_1[i][j] = "_";

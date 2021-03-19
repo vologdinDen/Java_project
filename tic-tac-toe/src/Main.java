@@ -5,8 +5,6 @@ public class Main {
         Game_Mechanic game_Object = new Game_Mechanic();
         Scanner in = new Scanner(System.in);
         String choose = new String();
-        Object Player_1 = new Object();
-        Object Player_2 = new Object();
         control(in, choose, game_Object);
     }
 
@@ -27,6 +25,7 @@ public class Main {
                 System.out.println("Выберите сложность:");
                 System.out.println("1. Лёгкая");
                 System.out.println("2. Средняя");
+                System.out.println("3. Сложная");
                 choose = in.nextLine();
                 if(choose.equals("1")){
                     Player_User Player_1 = new Player_User();
@@ -37,6 +36,12 @@ public class Main {
                 else if(choose.equals("2")){
                     Player_User Player_1 = new Player_User();
                     Player_Computer_Medium Player_2 = new Player_Computer_Medium();
+                    match(Player_1, Player_2, game_Object);
+                    break;
+                }
+                else if(choose.equals("3")){
+                    Player_User Player_1 = new Player_User();
+                    Player_Computer_Hard Player_2 = new Player_Computer_Hard();
                     match(Player_1, Player_2, game_Object);
                     break;
                 }
@@ -63,18 +68,26 @@ public class Main {
 
             field = Player_1.make_move(field, player_1_choose);
             game_Object.set_field(field);
-            if(!game_Object.is_win()){
-                System.out.printf("%s победил!", player_1_choose);
+            if(game_Object.is_win() == 1){
+                System.out.printf("%s победил", player_1_choose);
+                break;
+            }else if(game_Object.is_win() == 0){
+                System.out.println("Ничья");
                 break;
             }
             field = Player_2.make_move(field, player_2_choose);
             game_Object.set_field(field);
             game_Object.show_field();
-            if(!game_Object.is_win()){
-                System.out.printf("%s победил!", player_2_choose);
+            if(game_Object.is_win() == 1){
+                System.out.printf("%s победил", player_2_choose);
+                break;
+            }else if(game_Object.is_win() == 0){
+                System.out.println("Ничья");
                 break;
             }
 
+
         }
     }
+
 }
