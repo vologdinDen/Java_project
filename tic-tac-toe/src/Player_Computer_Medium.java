@@ -1,5 +1,5 @@
 public class Player_Computer_Medium extends Players{
-    private int[] coordinate_int;
+    final int[] coordinate_int;
     private String[][] field_1;
 
     public Player_Computer_Medium(){
@@ -36,7 +36,6 @@ public class Player_Computer_Medium extends Players{
             }
 
         }
-        System.out.println("Компъютер сделал ход");
         return field;
     }
 

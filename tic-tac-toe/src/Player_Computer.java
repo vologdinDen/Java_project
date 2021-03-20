@@ -1,6 +1,6 @@
 public class Player_Computer extends Players{
 
-    private int[] coordinate_int;
+    final int[] coordinate_int;
 
     public Player_Computer(){
         this.coordinate_int = new int[2];
@@ -19,7 +19,6 @@ public class Player_Computer extends Players{
             }
 
         }
-        System.out.println("Компъютер сделал ход");
         return field;
     }
 

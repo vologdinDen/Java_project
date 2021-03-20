@@ -1,8 +1,6 @@
-import java.util.Scanner;
 
 public class Game_Mechanic {
     private String[][] field;
-    final Scanner in = new Scanner(System.in);
 
 
     public Game_Mechanic(){
@@ -66,6 +64,14 @@ public class Game_Mechanic {
             }
         }
         return 0;
+    }
+
+    public void clear_field(){
+        for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                this.field[i][j] = "_";
+            }
+        }
     }
 
 
