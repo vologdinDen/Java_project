@@ -14,7 +14,7 @@ public class Main {
             System.out.println("1. Игрок 1 против Игрок 2");
             System.out.println("2. Игрок против компъютера");
             System.out.println("3. Выйти");
-            choose = in.nextLine();
+            choose =  in.nextLine();
             if(choose.equals("1")){
                 Player_User Player_1 = new Player_User();
                 Player_User Player_2 = new Player_User();
